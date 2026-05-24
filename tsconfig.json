@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "NodeNext",      // או ESNext
+    "module": "NodeNext",     
     "moduleResolution": "NodeNext",
-    "types": ["node"],         // <--- השורה החשובה ביותר
-    "esModuleInterop": true,   // מאפשר יבוא חלק של מודולים
+    "types": ["node"],         
+    "esModuleInterop": true,  
     "strict": true
   }
 }
