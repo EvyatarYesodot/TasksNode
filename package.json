@@ -1,0 +1,22 @@
+{
+  "name": "file_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.8.0",
+    "@types/random-words": "^1.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "one-liner-joke": "^1.2.2",
+    "random-words": "^2.0.1"
+  }
+}
