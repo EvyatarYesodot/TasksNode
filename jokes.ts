@@ -1,10 +1,8 @@
-import { config } from "dotenv";
 import fs from "fs/promises";
 import oneLinerJoke from "one-liner-joke";
+import "dotenv/config"
 
-config();
-
-const writingJokesFile = async () => {
+const writingJokesFile = async (): Promise<void> => {
   try {
     type JokeItem = {
       body: string;

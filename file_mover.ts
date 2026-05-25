@@ -6,7 +6,7 @@ const pathFilesToMove = path.join(import.meta.dirname, "files_to_move");
 const pathMovedFiles = path.join(import.meta.dirname, "moved_files");
 const pathMovedFileTxt = path.join(import.meta.dirname, "moved_files.txt");
 
-const moveFile = async (fileName: string) => {
+const moveFile = async (fileName: string): Promise<void> => {
   try {
     const oldPath = path.join(pathFilesToMove, fileName);
     const newPath = path.join(pathMovedFiles, fileName);
@@ -15,13 +15,14 @@ const moveFile = async (fileName: string) => {
     console.log(`file: -${fileName}- moving to -moved_files-.`);
     await fs.appendFile(pathMovedFileTxt, fileName + "\n", "utf8");
   } catch (error: any) {
-    if (error.code !== "ENOENT") {
-      console.error(`Error moving ${fileName}:`, error);
+    const nodeError = error as NodeJS.ErrnoException;
+    if (nodeError.code !== "ENOENT") {
+      console.error(`Error moving ${fileName}:`, nodeError);
     }
   }
 };
 
-const movingFiles = async () => {
+const movingFiles = async (): Promise<void> => {
   try {
     await fs.mkdir(pathFilesToMove, { recursive: true });
     await fs.mkdir(pathMovedFiles, { recursive: true });

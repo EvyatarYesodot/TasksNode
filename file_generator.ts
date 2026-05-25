@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import { generate } from "random-words";
 
-const file_generator = async (numFile: number, numTxt: number) => {
+const file_generator = async (numFile: number,numTxt: number,): Promise<void> => {
   try {
     let textWritingNum = numTxt;
     const dirName = "created_files";
