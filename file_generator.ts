@@ -23,6 +23,5 @@ const file_generator = async (numFile: number,numTxt: number,): Promise<void> =>
   }
 };
 
-const numberFile = parseInt(process.argv[2], 10);
-const numberTxt = parseInt(process.argv[3], 10);
-file_generator(numberFile, numberTxt);
+
+file_generator(5,8);
